@@ -1,42 +1,13 @@
-# R  read читати як текст readlines читати яки список рядків
-# W write записати
-# A write записати
 
-# RB read читати як текст readlines читати яки список рядків
-# WB write записати
-# AB write записати
 import os
 import pickle
 import json
-
-
-'''
-data = [1,2,1,3,2,4,5,345,34,534,534,534,54,{"1":[1,3,2,4,3,5,{"15":155}]}]
-# Кодувати dumps
-# Декодувати loads
-result_data = pickle.dumps(data)
-print(result_data)
-
-with open(FILENAME,"rb") as file:
-    print(pickle.loads(file.read()))
-'''
-# Кодувати dumps
-# Декодувати loads
-import jsonpickle
 
 files_data = []
 
 def get_file_data(filename):
     with open(filename,"rb") as file:
         return {"name":filename,"size":len(file.read())}
-
-'''
-[{"1.png","size":200},
- {"2.png","size":300},
- {"3.png","size":400},
- {"4.png","size":500},
- {"5.png","size":600}]
-'''
 
 def write_filedata(result_file,file):
     with open(file["name"],"rb") as data:
